@@ -22,9 +22,9 @@ resource "google_storage_bucket" "tf-bucket" {
   project       = var.gcp_project_id
   name          = var.bucket_name
   location      = var.gcp_region
-  force_destroy = var.force_destroy
-  storage_class = var.storage-class
+  force_destroy = true
+  storage_class = var.bucket_storage_class
   versioning {
-    enabled = var.versioning_enabled
+    enabled = true
   }
 }

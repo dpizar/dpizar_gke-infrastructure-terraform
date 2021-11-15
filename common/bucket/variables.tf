@@ -38,19 +38,7 @@ variable "bucket_name" {
   type        = string
 }
 
-variable "force_destroy" {
-  type        = bool
-  description = "Value for the bucket parameter force_destroy"
-  default     = true
-}
-
-variable "versioning_enabled" {
-  type        = bool
-  description = "Value to enable or not the versioning"
-  default     = true
-}
-
-variable "storage-class" {
+variable "bucket_storage_class" {
   type        = string
   description = "The storage class of the Storage Bucket to create"
 }

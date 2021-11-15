@@ -9,7 +9,7 @@ variable "terraform_cloud_organisation" {
 variable "gcp_auth_file" {
   type        = string
   description = "GCP authentication file for the GCP service account key in JSON format"
-  default     = "./terraform-svc.json"
+  default     = "../common/auth/terraform-svc.json"
 }
 
 # Google Cloud variable section
@@ -96,10 +96,4 @@ variable "gke_pool_machine_type" {
   description = "Machine type for the pool of compute resources in the GKE."
   type        = string
   default     = "e2-small"
-}
-
-variable "bucket_name" {
-  description = "GCS Bucket name. Value should be unique."
-  type        = string
-  default     = "tf-bucket-ycit021"
 }
