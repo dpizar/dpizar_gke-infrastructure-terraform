@@ -1,5 +1,5 @@
 # Google cloud credentials, token of service account, service-account.json or simialr
-*.json
+#*.json
 *.key
 
 # Terraform token and auth files

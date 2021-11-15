@@ -1,5 +1,5 @@
 # GCP Settings
-gcp_project = "dpizar-notepad-dev-1"
+gcp_project_id = "dpizar-notepad-dev-1"
 gcp_region = "us-central1"
 gcp_zone = "us-central1-a"
 gcp_auth_file = "../auth/terraform-svc.json"
