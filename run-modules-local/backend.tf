@@ -7,6 +7,6 @@ terraform {
   backend "gcs" {
     bucket      = "gcp_terraform_state"
     prefix      = "terraform/local-module-state"
-	credentials = "terraform-svc.json"
+	  credentials = "../common/auth/terraform-svc.json"
   }
 }

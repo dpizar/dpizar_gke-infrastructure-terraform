@@ -18,22 +18,12 @@ Go to the /common/bucket folder and run the terraform code.
 We can either build the infrastructure using local modules or we can build it using the modules from Terraform Cloud Registry.
 # Using local Modules
 **Steps**
-1. Clone repository (if not done yet)
-2. Navigate to the folder 'run-modules-local'
-3. Do a copy of the folder named 'modules' inside the folder 'run-modules-local'
-4. Edit the file **terraform.tfvars** and change the values to the variables to match your environment like,
-   
-   - Project Id
-   - The billing account associated to the project
-   - Bucket name
-   - Path to your authorisation file
-   
-   > If there is no file named terraform.tfvars you can create it using the template 'terraform.tfvars-sample" 
-   
-5. Place the json file having your google service account token in the working directory
+1. Navigate to the folder 'run-modules-local'
+2. Run the terraform commands init, plan, apply. 
+3. Run terraform command destroy if needed. (Run this command when doing testings to avoid unnecessary or accidental **fees** :heavy_dollar_sign: :heavy_dollar_sign:)
 
-    _Note_: location and name must match the value entered in the .tfvars file
-	 
-6. Run the terraform commands init, plan, apply. 
-
-7. Run terraform command destroy if needed. (Run this command when doing testings to avoid unnecessary or accidental **fees** :heavy_dollar_sign: :heavy_dollar_sign:)
+# Using Cloud Registry Modules
+**Steps**
+1. Navigate to the folder 'run-modules'
+2. Run the terraform commands init, plan, apply. 
+3. Run terraform command destroy if needed. (Run this command when doing testings to avoid unnecessary or accidental **fees** :heavy_dollar_sign: :heavy_dollar_sign:)
