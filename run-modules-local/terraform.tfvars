@@ -11,7 +11,7 @@ gcp_zone              = "us-central1-a"
 
 org				      = "dpizar" 								# Student initials for instance
 environment           = "dev" 								#value to be prefixed to resources names to differentiate them
-bucket_name           = "gcp_terraform_state"					# Put the desired GCS Bucket name.
+bucket_name           = "dpizar_terraform_state"					# Put the desired GCS Bucket name.
 
 #Network related
 

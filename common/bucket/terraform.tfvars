@@ -6,5 +6,5 @@ gcp_auth_file = "../auth/terraform-svc.json"
 billing_account = "010227-F277BC-AFD307"
 
 # Bucket
-bucket_name = "gcp_terraform_state"
+bucket_name = "dpizar_terraform_state"
 bucket_storage_class = "REGIONAL"
