@@ -1,4 +1,4 @@
-name: hadolint
+name: hadolint + push Docker Hub
 
 # Controls when the workflow will run
 on:
@@ -40,7 +40,7 @@ jobs:
     runs-on: ubuntu-latest
     steps: 
       - name: Check out the repo
-      - uses: actions/checkout@v2
+        uses: actions/checkout@v2
 
       - name: Login to Dockerhub
         uses: docker/login-action@v1
