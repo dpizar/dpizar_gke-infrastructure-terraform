@@ -2,7 +2,7 @@
 #
 # Update values with your environment
 #
-gcp_auth_file         = "../auth/terraform-svc.json"        			#File with service account Key in json format 
+gcp_auth_file         = "./auth/terraform-svc.json"        			#File with service account Key in json format 
 gcp_project_id        = "dpizar-notepad-dev-1"         						#Project ID, not the name the Project Id
 billing_account       = "010227-F277BC-AFD307"     							#billing account tied to the project Id
 

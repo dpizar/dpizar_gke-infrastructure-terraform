@@ -20,7 +20,8 @@ ENV TERRAFORM_VERSION=1.0.11
 ENV TF_DEV=true
 ENV TF_RELEASE=true
 ENV TF_CLI_CONFIG_FILE=/terraformfiles/.terraformrc
-ENV GOOGLE_APPLICATION_CREDENTIALS=/terraformfiles/gcp_auth.json
+# Change this depending where the credential file will end up in the container
+ENV GOOGLE_APPLICATION_CREDENTIALS=/terraformfiles/auth/terraform-svc.json
 
 RUN echo "Start building" \
     # Download terraform version, unzip, move executable to path and removes zip file.
