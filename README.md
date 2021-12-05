@@ -31,7 +31,7 @@ We can either build the infrastructure using local modules or we can build it us
 
 ## Using Cloud Registry Modules(Tested and working)
 **Before Steps**
-
+1. Generate your Terraform Token and put it in create-gke folder
 **Steps**
 1. Navigate to the folder 'run-modules'
 2. Go to https://app.terraform.io/app/Terraformers21/registry/private/modules and make sure we have the latest version of modgke(google k8 cluster module) and the modvpc(Networking module)
