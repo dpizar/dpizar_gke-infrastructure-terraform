@@ -15,7 +15,7 @@ spec:
         run: react-redux-app
     spec:
       containers:
-        image: dpizar/reac-redux:latest
-        name: react-redux-app
+      - name: react-redux-app
+        image: dpizar/react-redux:latest
         ports:
         - containerPort: 4100

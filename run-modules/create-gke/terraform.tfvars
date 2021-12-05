@@ -16,9 +16,9 @@ environment     = "dev"                       #value to be prefixed to resources
 
 # Bucket
 bucket_name           = "dpizar_terraform_state"					# Put the desired GCS Bucket name.
-force_destroy       = true
-versioning_enabled  = true
-storage-class       = "REGIONAL"
+# force_destroy       = true
+# versioning_enabled  = true
+# storage-class       = "REGIONAL"
 
 #Network related
 
