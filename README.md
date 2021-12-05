@@ -2,7 +2,7 @@
 Pull the terraform docker image from the repository. We will run our terraform infrastructure on this image.
 Run terraform docker image. **You need to explicitly define the directory with the terraform files when running the terraform container.**
 ```
-docker image pull dpizar/terraformers:v1
+docker image pull dpizar/terraformers:v3
 docker run --rm -it -v "$(pwd):/terraformfiles" dpizar/terraformers:v3 init
 docker run --rm -it -v "$(pwd):/terraformfiles" dpizar/terraformers:v3 plan
 docker run --rm -it -v "$(pwd):/terraformfiles" dpizar/terraformers:v3 apply // this run the image and initialize our infrastructure under the specified directory.

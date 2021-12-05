@@ -101,5 +101,5 @@ variable "gke_pool_machine_type" {
 variable "bucket_name" {
   description = "GCS Bucket name. Value should be unique."
   type        = string
-  default     = "tf-bucket-ycit021"
+  default     = "dpizar_terraform_state"
 }

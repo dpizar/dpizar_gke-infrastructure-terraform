@@ -9,8 +9,8 @@ terraform {
 
 terraform {
   backend "gcs" {
-    bucket      = var.bucket_name
+    bucket      = "dpizar_terraform_state"
     prefix      = "terraform/remote-module-state"
-    credentials = file(var.gcp_auth_file)
+    credentials = "./auth/terraform-svc.json"
   }
 }
