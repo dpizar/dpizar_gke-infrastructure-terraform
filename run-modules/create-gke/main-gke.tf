@@ -3,11 +3,12 @@ terraform {
     google = {
       source  = "hashicorp/google"
       version = "~> 3.89.0"
+      # version = "~> "4.1.0"  problems with this version
     }
     google-beta = {
       source  = "hashicorp/google-beta"
       version = "~> 3.89.0"
-
+      # version = "~> "4.1.0"  problems with this version
     }
   }
 }
@@ -35,7 +36,7 @@ locals {
 
 module "vpc_tformers" {
   source  = "app.terraform.io/Terraformers21/modvpc/gcp"
-  version = "1.0.2"
+  version = "1.1.0"
   # insert required variables here
 
 #PROJECT info
@@ -69,7 +70,7 @@ module "vpc_tformers" {
 
 module "gke_tformers" {
   source  = "app.terraform.io/Terraformers21/modgke/gcp"
-  version = "1.0.2"
+  version = "1.3.0"
   # insert required variables here
 
 #PROJECT info

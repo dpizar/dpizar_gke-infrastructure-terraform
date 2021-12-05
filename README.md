@@ -3,7 +3,9 @@ Pull the terraform docker image from the repository. We will run our terraform i
 Run terraform docker image. **You need to explicitly define the directory with the terraform files when running the terraform container.**
 ```
 docker image pull dpizar/terraformers:v1
-docker run --rm -it -v "$(pwd):/terraformfiles" terraformers:v1 init // this run the image and initialize our infrastructure under the specified directory.
+docker run --rm -it -v "$(pwd):/terraformfiles" dpizar/terraformers:v3 init
+docker run --rm -it -v "$(pwd):/terraformfiles" dpizar/terraformers:v3 plan
+docker run --rm -it -v "$(pwd):/terraformfiles" dpizar/terraformers:v3 apply // this run the image and initialize our infrastructure under the specified directory.
 ```
 
 # Create infrastructure
@@ -21,14 +23,17 @@ terraform apply -var-file="terraform.tfvars"
 ```
 
 We can either build the infrastructure using local modules or we can build it using the modules from Terraform Cloud Registry.
-## Using local Modules
+## Using local Modules(Tested and working)
 **Steps**
 1. Navigate to the folder 'run-modules-local'
 2. Run the terraform commands init, plan, apply as seen above, with terraform.tfvars configuration file.
 3. Run terraform command destroy if needed. (Run this command when doing testings to avoid unnecessary or accidental **fees** :heavy_dollar_sign: :heavy_dollar_sign:)
 
-## Using Cloud Registry Modules(Not yet configured......)
+## Using Cloud Registry Modules(Tested and working)
+**Before Steps**
+
 **Steps**
 1. Navigate to the folder 'run-modules'
-2. Run the terraform commands init, plan, apply as seen above, with terraform.tfvars configuration file.
-3. Run terraform command destroy if needed. (Run this command when doing testings to avoid unnecessary or accidental **fees** :heavy_dollar_sign: :heavy_dollar_sign:)
+2. Go to https://app.terraform.io/app/Terraformers21/registry/private/modules and make sure we have the latest version of modgke(google k8 cluster module) and the modvpc(Networking module)
+3. Run the terraform commands init, plan, apply as seen above, with terraform.tfvars configuration file.
+4. Run terraform command destroy if needed. (Run this command when doing testings to avoid unnecessary or accidental **fees** :heavy_dollar_sign: :heavy_dollar_sign:)
