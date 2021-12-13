@@ -19,8 +19,9 @@ LABEL change.new-d           ="Downloads terraform from hashicorp official relea
 ENV TERRAFORM_VERSION=1.0.11
 ENV TF_DEV=true
 ENV TF_RELEASE=true
-ENV TF_CLI_CONFIG_FILE=/terraformfiles/.terraformrc
-# Change this depending where the credential file will end up in the container
+# Change this depending where the terraform credential file will end up in the container
+ENV TF_CLI_CONFIG_FILE=/terraformfiles/auth/.terraformrc
+# Change this depending where the google credential file will end up in the container
 ENV GOOGLE_APPLICATION_CREDENTIALS=/terraformfiles/auth/terraform-svc.json
 
 RUN echo "Start building" \

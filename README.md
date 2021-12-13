@@ -5,12 +5,12 @@ Run terraform docker image. **You need to explicitly define the directory with t
 docker image pull dpizar/terraformers:v3
 
 
-docker run --rm -it -v "$(pwd):/terraformfiles" dpizar/terraformers:v3 init
-docker run --rm -it -v "$(pwd):/terraformfiles" dpizar/terraformers:v3 plan -var-file="terraform.tfvars"
-docker run --rm -it -v "$(pwd):/terraformfiles" dpizar/terraformers:v3 apply -var-file="terraform.tfvars"// this run the image and initialize our infrastructure under the specified directory.
+docker run --rm -it -v "$(pwd):/terraformfiles" dpizar/terraformers:v4 init
+docker run --rm -it -v "$(pwd):/terraformfiles" dpizar/terraformers:v4 plan -var-file="terraform.tfvars"
+docker run --rm -it -v "$(pwd):/terraformfiles" dpizar/terraformers:v4 apply -var-file="terraform.tfvars"// this run the image and initialize our infrastructure under the specified directory.
 
 To Destroy:
-docker run --rm -it -v "$(pwd):/terraformfiles" dpizar/terraformers:v3 apply "-destroy" "-auto-approve"
+docker run --rm -it -v "$(pwd):/terraformfiles" dpizar/terraformers:v4 apply "-destroy" "-auto-approve"
 
 ```
 
@@ -30,9 +30,9 @@ Create a service account with storage.admin role and add it to the /common/bucke
 Configure a GCP Bucket so we can store the state of our infrastructure. Each folder in the terraform structure will have it's own independent state(This helps to encapsulate different parts of our infrastructure).
 Go to the /common/bucket folder and run the the terraform commands:
 ```
-docker run --rm -it -v "$(pwd):/terraformfiles" dpizar/terraformers:v3 init
-docker run --rm -it -v "$(pwd):/terraformfiles" dpizar/terraformers:v3 plan -var-file="terraform.tfvars"
-docker run --rm -it -v "$(pwd):/terraformfiles" dpizar/terraformers:v3 apply -var-file="terraform.tfvars"
+docker run --rm -it -v "$(pwd):/terraformfiles" dpizar/terraformers:v4 init
+docker run --rm -it -v "$(pwd):/terraformfiles" dpizar/terraformers:v4 plan -var-file="terraform.tfvars"
+docker run --rm -it -v "$(pwd):/terraformfiles" dpizar/terraformers:v4 apply -var-file="terraform.tfvars"
 ```
 We use our docker image(dpizar/terraformers:v3) to initialize, plan and apply our terraform infrastructure.
 
