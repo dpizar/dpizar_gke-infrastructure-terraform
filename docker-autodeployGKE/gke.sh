@@ -2,9 +2,9 @@
 git clone https://github.com/dpizar/dpizar_gke-infrastructure-terraform.git
 
 cd dpizar_gke-infrastructure-terraform/run-modules/
-cp -r /terraformfiles/dpizar_gke-infrastructure-terraform/run-modules/ /terraformfiles/
+cp -r /terraformfiles/auth/ /terraformfiles/dpizar_gke-infrastructure-terraform/run-modules/
 
-cd ~/terraformfiles/
+ls -a
 
 terraform init
 terraform apply -auto-approve
