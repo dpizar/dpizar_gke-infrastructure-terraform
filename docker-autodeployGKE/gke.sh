@@ -6,6 +6,8 @@ cp -r /terraformfiles/auth/ /terraformfiles/dpizar_gke-infrastructure-terraform/
 
 ls -a
 ls auth/ -a
+ls auth/.terraformrc
+ls auth/terraform-svc.json
 
 terraform init
 terraform apply -auto-approve
