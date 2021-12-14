@@ -5,7 +5,7 @@ cd dpizar_gke-infrastructure-terraform/run-modules/
 cp -r /terraformfiles/auth/ /terraformfiles/dpizar_gke-infrastructure-terraform/run-modules/
 
 ls -a
-ls /auth -a
+ls auth/ -a
 
 terraform init
 terraform apply -auto-approve
