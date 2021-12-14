@@ -2,7 +2,7 @@ name: GKE Infrastructure
 
 # Controls when the workflow will run
 on:
-  # Triggers the workflow on push or pull request events but only for the main branch and only when Dockerfile is involved
+  # Triggers the workflow on push or pull request events but only for the main branch and only when terraform files in the run-modules folder are involved
   push:
     paths:
       - 'run-modules/**.tf'
@@ -24,22 +24,26 @@ jobs:
     environment:
       name: dev
     steps:
-    
+  # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
+      - name: Checkout repo files
+        uses: actions/checkout@v2
+  # Loging to DockerHub
       - name: Login Docker
         uses: docker/login-action@v1
         with:
           username: ${{ secrets.DOCKER_USER }}
           password: ${{ secrets.DOCKER_PASSWORD }}
-          
+  # Build Docker image(To build Terraform Infrastructure) and push it to dockerhub      
       - name: Build Docker
         uses: docker/build-push-action@v2
         with:
           load: true
           tags: ${{ env.TAG }}
+          context: docker-autodeployGKE
+          file: docker-autodeployGKE/Dockerfile
           secrets: |
             "GCP_CREDENTIAL=${{ secrets.GCP_CREDENTIAL }}"
             "TERRAFORM_CREDENTIAL=${{ secrets.TERRAFORM_CREDENTIAL }}"
-            "TFVARS=${{ secrets.TFVARS }}"
             
       - name: Run Infrastructure image
         run: |
@@ -51,6 +55,8 @@ jobs:
     environment:
       name: prod
     steps:
+      - name: Checkout repo files
+        uses: actions/checkout@v2
 
       - name: Login Docker
         uses: docker/login-action@v1
@@ -63,10 +69,11 @@ jobs:
         with:
           load: true
           tags: ${{ env.TAG }}
+          context: docker-autodeployGKE
+          file: docker-autodeployGKE/Dockerfile
           secrets: |
             "GCP_CREDENTIAL=${{ secrets.GCP_CREDENTIAL }}"
             "TERRAFORM_CREDENTIAL=${{ secrets.TERRAFORM_CREDENTIAL }}"
-            "TFVARS=${{ secrets.TFVARS }}"
             
       - name: Run Infrastructure image
         run: |

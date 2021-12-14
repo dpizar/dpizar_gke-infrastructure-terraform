@@ -5,7 +5,6 @@ WORKDIR /terraformfiles
 # we tell docker to mount secrets with an id to the destination dst. And in the same line we execute the cat command to check if the data is correct(maybe we can remove this latter)
 RUN --mount=type=secret,id=GCP_CREDENTIAL,dst=/terraformfiles/auth/terraform-svc.json cat /terraformfiles/auth/terraform-svc.json
 RUN --mount=type=secret,id=TERRAFORM_CREDENTIAL,dst=/terraformfiles/auth/.terraformrc cat /terraformfiles/auth/.terraformrc 
-RUN --mount=type=secret,id=TFVARS,dst=/terraformfiles/terraform.tfvars cat /terraformfiles/terraform.tfvars
 
 # Change this depending where the terraform credential file will end up in the container
 ENV TF_CLI_CONFIG_FILE=/terraformfiles/auth/.terraformrc
