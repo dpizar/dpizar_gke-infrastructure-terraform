@@ -1,5 +1,9 @@
 FROM dpizar/terraformers:v4
 
+#install git
+RUN apk update
+RUN apk add git
+
 WORKDIR /terraformfiles
 #  Load Secrets, that is: terraform credentials, google credentials and tfvars
 # we tell docker to mount secrets with an id to the destination dst. And in the same line we execute the cat command to check if the data is correct(maybe we can remove this latter)
