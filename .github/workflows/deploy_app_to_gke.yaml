@@ -1,5 +1,4 @@
-
-Name: Deploy realworld-app to GKE
+name: Deploy realworld-app to GKE
 
 on:
   push:
