@@ -66,5 +66,5 @@ jobs:
           --project $PROJECT_ID
         helm upgrade --install $DEPLOYMENT_NAME-newWorldApp $DEPLOYMENT_NAME \
           --set=image.tag=$GITHUB_SHA
-        kubectl rollout status deployment/$DEPLOYMENT_NAME-installation
+        kubectl rollout status deployment/$DEPLOYMENT_NAME-newWorldApp
         kubectl get services -o wide
