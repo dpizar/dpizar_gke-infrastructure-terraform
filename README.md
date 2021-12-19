@@ -2,7 +2,7 @@
 Pull the terraform docker image from the repository. We will run our terraform infrastructure on this image.
 Run terraform docker image. **You need to explicitly define the directory with the terraform files when running the terraform container.**
 ```
-docker image pull dpizar/terraformers:v3
+docker image pull dpizar/terraformers:v4
 
 
 docker run --rm -it -v "$(pwd):/terraformfiles" dpizar/terraformers:v4 init
@@ -60,9 +60,12 @@ Authenticate to cluster
 gcloud container clusters get-credentials gke-ycit-tformers-default-dev --region us-central1 
 ```
 
-Create a namespace, switch to create namespace
+Navigate to folder reactReduxChart/
+Create a namespace, switch to create namespace and deploy helm chart.
 ```
 kubectl create ns dev
 kubectl config set-context --current --namespace=dev
 
+# install helm chart, make sure the name is lowercase
+helm install reactreduxchart .
 ```
