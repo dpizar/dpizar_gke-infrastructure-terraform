@@ -18,7 +18,4 @@ ENV GOOGLE_APPLICATION_CREDENTIALS=/terraformfiles/auth/terraform-svc.json
 # Run the shell script to clone repo and create infrastructure.
 COPY gke.sh .
 #Copy remote modules terraform code to container
-COPY ./../run-modules/ /terraformfiles/
-RUN terraform init
-ENTRYPOINT ["terraform"]
-CMD ["apply -auto-approve"]
+ENTRYPOINT ["ash","gke.sh"]
