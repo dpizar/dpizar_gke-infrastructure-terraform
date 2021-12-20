@@ -7,6 +7,7 @@ RUN apk add git
 WORKDIR /terraformfiles
 #  Load Secrets, that is: terraform credentials and google credentials
 # we tell docker to mount secrets with an id to the destination dst. And in the same line we execute the cat command to check if the data is correct(maybe we can remove this latter)
+# There are some conventions on how to name the dst file. For example it cannot start with '.'. This is why we need to copy it after it has been mounted.
 RUN --mount=type=secret,id=GCP_CREDENTIAL,dst=/terraformfiles/auth/terraform.json cat /terraformfiles/auth/terraform.json > /terraformfiles/auth/terraform-svc.json
 RUN --mount=type=secret,id=TERRAFORM_CREDENTIAL,dst=/terraformfiles/auth/terraformrc cat /terraformfiles/auth/terraformrc > /terraformfiles/auth/.terraformrc 
 
